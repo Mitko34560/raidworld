@@ -8,6 +8,9 @@
     name="description"
     content="Raid World — PvP Minecraft сервер с черно-красной атмосферой, быстрым стартом и отдельными страницами привилегий."
   >
+  <meta name="theme-color" content="#120606">
+  <link rel="icon" href="assets/rw-logo.svg" type="image/svg+xml">
+  <link rel="shortcut icon" href="assets/rw-logo.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -27,12 +30,12 @@
 
       <nav class="nav">
         <a href="#about">О сервере</a>
-        <a href="#store">Привилегии</a>
+        <a href="privileges.html">Привилегии</a>
         <a href="#start">Как начать</a>
         <a href="#faq">Информация</a>
       </nav>
 
-      <a class="nav-cta" href="#store">Выбрать привилегию</a>
+      <a class="nav-cta" href="privileges.html">Выбрать привилегию</a>
     </header>
 
     <main>
@@ -41,11 +44,12 @@
           <p class="eyebrow">Season 2026 • Black / Red PvP</p>
           <h1><span>Raid World</span> Начало новой эры</h1>
           <p class="hero-text">
-            Открой для себя огромные миры, полные веселья и миллионов друзей
+            Открой для себя огромные миры, кланы, рейды и жёсткое PvP в атмосфере,
+            где каждая деталь работает на стиль сервера и быстрый вход в игру.
           </p>
 
           <div class="hero-actions">
-            <a class="button button-primary" href="#start">Присоединяйтесь к нам прямо сейчас и начинайте игру !</a>
+            <a class="button button-primary" href="#start">Присоединяйтесь прямо сейчас и начинайте игру</a>
             <button class="button button-secondary copy-button" data-copy-value="mc.raidworld.me">
               Скопировать IP
             </button>
@@ -56,6 +60,7 @@
             <span class="chip">Кланы и рейды</span>
             <span class="chip">Онлайн 24/7</span>
           </div>
+        </div>
 
         <div class="hero-panel">
           <div class="panel-glow"></div>
@@ -78,17 +83,21 @@
             </div>
 
             <ul class="hero-list">
-              <li>костомный дизайн</li>
-              <li>Гриферский сервер</li>
+              <li>кастомный дизайн и единый стиль проекта</li>
+              <li>гриферский сервер с акцентом на PvP</li>
+              <li>старт нового сезона уже скоро</li>
             </ul>
 
             <div class="price-row">
               <div>
-                <span>Старт сезона</span>
+                <small>Старт сезона</small>
                 <strong>Скоро</strong>
               </div>
+              <a class="button button-primary" href="privileges.html">Привилегии</a>
+            </div>
           </article>
         </div>
+      </section>
 
       <section class="section reveal" id="about">
         <div class="section-heading">
@@ -110,7 +119,7 @@
           <article class="feature-card feature-card-accent interactive-card">
             <span class="feature-index">02</span>
             <h3>Честный донат</h3>
-            <p>Привилегии отделены от остального контента и оформлены так, чтобы сразу было видно разницу.</p>
+            <p>Привилегии отделены от остального контента и оформлены так, чтобы сразу была видна разница.</p>
           </article>
 
           <article class="feature-card interactive-card">
@@ -121,70 +130,22 @@
         </div>
       </section>
 
-      <section class="section reveal" id="store">
+      <section class="section reveal server-cta-section" id="store">
         <div class="section-heading">
           <p class="eyebrow">Привилегии</p>
-          <h2>Три пакета с разным уровнем статуса, команд и косметики.</h2>
+          <h2>Все привилегии вынесены на отдельную страницу для удобного выбора.</h2>
           <p>
-            Каждая привилегия вынесена в отдельную страницу, чтобы игрок мог спокойно посмотреть состав,
-            преимущества и цену в евро перед покупкой.
+            Там собраны все пакеты, цены в евро и переходы на отдельные страницы Shadow VIP,
+            Crimson Elite и Inferno Legend+.
           </p>
         </div>
-
-        <div class="card-grid">
-          <article class="product-card interactive-card">
-            <div class="product-top">
-              <span class="tier tier-vip">VIP</span>
-              <strong>€9.99</strong>
-            </div>
-            <h3>Shadow VIP</h3>
-            <p>Лёгкий вход в премиум-уровень: красивый префикс, быстрый старт и полезные ежедневные бонусы.</p>
-            <ul class="feature-list">
-              <li>уникальный префикс Shadow и цветной ник</li>
-              <li>ежедневный набор и 2 точки дома</li>
-              <li>приоритет в очереди и бонус к старту сезона</li>
-            </ul>
-            <div class="product-actions">
-              <a class="button button-secondary" href="shadow.html">Подробнее</a>
-              <a class="button button-primary" href="shadow.html">Купить</a>
-            </div>
-          </article>
-
-          <article class="product-card featured-card interactive-card">
-            <div class="product-top">
-              <span class="tier tier-elite">ELITE</span>
-              <strong>€19.99</strong>
-            </div>
-            <h3>Crimson Elite</h3>
-            <p>Пакет для активных игроков, которым нужны удобные команды, эффектный статус и уверенное преимущество.</p>
-            <ul class="feature-list">
-              <li>всё из Shadow VIP</li>
-              <li>дополнительный кит, ремонт предметов и аукцион</li>
-              <li>клановые бонусы и эксклюзивные частицы</li>
-            </ul>
-            <div class="product-actions">
-              <a class="button button-secondary" href="crimson.html">Подробнее</a>
-              <a class="button button-primary" href="crimson.html">Купить</a>
-            </div>
-          </article>
-
-          <article class="product-card interactive-card">
-            <div class="product-top">
-              <span class="tier tier-legend">LEGEND+</span>
-              <strong>€34.99</strong>
-            </div>
-            <h3>Inferno Legend+</h3>
-            <p>Максимальный пакет с визуальным статусом, премиальными командами и сезонными наградами для топ-игроков.</p>
-            <ul class="feature-list">
-              <li>всё из Crimson Elite</li>
-              <li>анимированный префикс и расширенный набор команд</li>
-              <li>еженедельные ключи, косметика и приоритетная помощь</li>
-            </ul>
-            <div class="product-actions">
-              <a class="button button-secondary" href="legend.html">Подробнее</a>
-              <a class="button button-primary" href="legend.html">Купить</a>
-            </div>
-          </article>
+        <div class="server-cta-card interactive-card">
+          <div>
+            <span class="card-label">Store</span>
+            <h3>Открыть страницу привилегий</h3>
+            <p>Выбери пакет, сравни состав и перейди на отдельную страницу нужной привилегии.</p>
+          </div>
+          <a class="button button-primary" href="privileges.html">Перейти к привилегиям</a>
         </div>
       </section>
 

@@ -139,21 +139,22 @@ select {
 .brand-logo,
 .footer-logo {
   display: block;
-  width: 64px;
-  height: 64px;
+  width: 46px;
+  height: 46px;
   object-fit: contain;
   filter: drop-shadow(0 0 24px rgba(255, 74, 52, 0.24));
 }
 
 .footer-logo {
-  width: 42px;
-  height: 42px;
+  width: 36px;
+  height: 36px;
 }
 
 .brand-text {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 1px;
+  line-height: 1.1;
 }
 
 .brand-text strong,
@@ -216,6 +217,7 @@ select {
   border-radius: 999px;
   background: linear-gradient(145deg, rgba(255, 84, 84, 0.95), rgba(140, 10, 10, 0.95));
   box-shadow: 0 12px 28px rgba(213, 22, 22, 0.28);
+  white-space: nowrap;
 }
 
 .hero,
@@ -298,9 +300,9 @@ select {
 .hero h1,
 .subpage-hero h1 {
   margin: 0;
-  max-width: 11ch;
-  font-size: clamp(3.3rem, 7vw, 6.8rem);
-  line-height: 0.92;
+  max-width: 9ch;
+  font-size: clamp(3.4rem, 7.4vw, 7.1rem);
+  line-height: 0.9;
   letter-spacing: 0.01em;
 }
 
@@ -318,10 +320,10 @@ select {
 
 .hero-text,
 .subpage-lead {
-  max-width: 64ch;
+  max-width: 58ch;
   margin: 24px 0 36px;
-  font-size: 1.08rem;
-  line-height: 1.9;
+  font-size: 1.04rem;
+  line-height: 1.8;
 }
 
 .hero-actions,
@@ -650,20 +652,53 @@ select {
   box-shadow: var(--shadow);
 }
 
+.server-cta-section .section-heading h2 {
+  max-width: 18ch;
+}
+
+.server-cta-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 30px;
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background:
+    linear-gradient(180deg, rgba(255, 74, 52, 0.12), rgba(255, 255, 255, 0.01)),
+    rgba(13, 13, 13, 0.95);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.26);
+}
+
+.server-cta-card h3 {
+  margin: 14px 0 10px;
+  font-family: "Bahnschrift", "Arial Narrow", sans-serif;
+  font-size: 2rem;
+}
+
+.server-cta-card p {
+  margin: 0;
+  max-width: 58ch;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
 .section-heading {
-  max-width: 920px;
-  margin-bottom: 30px;
+  max-width: 1080px;
+  margin-bottom: 36px;
 }
 
 .section-heading h2 {
   margin: 0;
-  font-size: clamp(2.2rem, 4.4vw, 3.9rem);
-  line-height: 1.02;
+  max-width: 15ch;
+  font-size: clamp(2.5rem, 4.8vw, 4.6rem);
+  line-height: 1.04;
 }
 
 .section-heading p {
-  max-width: 74ch;
-  line-height: 1.9;
+  max-width: 72ch;
+  margin-top: 18px;
+  line-height: 1.85;
 }
 
 .feature-grid,
@@ -680,7 +715,7 @@ select {
 .card-grid,
 .steps-grid,
 .faq-grid {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(240px, 1fr));
 }
 
 .overview-grid {
@@ -699,6 +734,7 @@ select {
 .benefit-card,
 .support-card {
   padding: 30px;
+  min-height: 100%;
 }
 
 .feature-card,
@@ -746,13 +782,22 @@ select {
 .benefit-card h3,
 .support-card h3 {
   margin: 0 0 14px;
-  font-size: 1.8rem;
+  font-size: 1.95rem;
+  line-height: 1.05;
 }
 
 .product-card {
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.015)),
     rgba(12, 12, 12, 0.95);
+}
+
+.product-card p,
+.feature-card p,
+.step-card p,
+.faq-card p {
+  font-size: 1rem;
+  line-height: 1.7;
 }
 
 .product-top {
@@ -768,6 +813,7 @@ select {
 
 .product-actions {
   margin-top: 30px;
+  justify-content: space-between;
 }
 
 .tier {
@@ -811,6 +857,10 @@ select {
   box-shadow: 0 14px 24px rgba(213, 22, 22, 0.3);
   font-family: "Bahnschrift", "Arial Narrow", sans-serif;
   font-size: 1.08rem;
+}
+
+.faq-card {
+  min-height: 320px;
 }
 
 .faq-section {
@@ -1009,8 +1059,8 @@ select {
   }
 
   .brand-logo {
-    width: 54px;
-    height: 54px;
+    width: 42px;
+    height: 42px;
   }
 
   .nav {
@@ -1028,6 +1078,11 @@ select {
   .section,
   .info-strip {
     padding: 22px;
+  }
+
+  .server-cta-card {
+    flex-direction: column;
+    align-items: stretch;
   }
 
   .hero-actions,
