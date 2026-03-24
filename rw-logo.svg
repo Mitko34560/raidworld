@@ -1,0 +1,47 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="frameOuter" x1="114" y1="81" x2="420" y2="425" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F6F6F6"/>
+      <stop offset="0.45" stop-color="#B5B5B7"/>
+      <stop offset="1" stop-color="#59595D"/>
+    </linearGradient>
+    <linearGradient id="frameInner" x1="144" y1="111" x2="386" y2="390" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0E0E10"/>
+      <stop offset="1" stop-color="#2A2A2E"/>
+    </linearGradient>
+    <linearGradient id="letters" x1="185" y1="122" x2="353" y2="394" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FF8A5C"/>
+      <stop offset="0.28" stop-color="#FF4F2D"/>
+      <stop offset="0.62" stop-color="#FF2E0A"/>
+      <stop offset="1" stop-color="#B90F08"/>
+    </linearGradient>
+    <linearGradient id="lettersBright" x1="241" y1="168" x2="299" y2="340" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFF3ED"/>
+      <stop offset="0.3" stop-color="#FFD7C9"/>
+      <stop offset="1" stop-color="#FF7A53" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="glow" x="40" y="35" width="432" height="442" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+      <feGaussianBlur stdDeviation="30" result="effect1_foregroundBlur"/>
+    </filter>
+  </defs>
+
+  <g filter="url(#glow)" opacity="0.85">
+    <path d="M124 146L256 72L388 146V294L256 368L124 294V146Z" fill="#FF4A34"/>
+  </g>
+
+  <path d="M125 147L256 72L387 147V293L256 368L125 293V147Z" fill="url(#frameOuter)"/>
+  <path d="M145 158L256 95L367 158V282L256 345L145 282V158Z" fill="url(#frameInner)"/>
+  <path d="M157 165L256 108L355 165V276L256 333L157 276V165Z" stroke="#F3F3F4" stroke-width="10" opacity="0.92"/>
+
+  <path d="M180 357V197L220 171H281L298 188V250L276 272L301 294V340L260 364H222L204 347V275H243V326H260V302L240 285V245L259 226V208H243L220 225V357L180 392V357Z" fill="url(#letters)"/>
+  <path d="M304 176H342V307L362 286V223L401 187V319L350 385L323 344V384H304V176Z" fill="url(#letters)"/>
+
+  <path d="M214 204L255 182V205L224 223V284L252 268V292L214 313V204Z" fill="url(#lettersBright)" opacity="0.55"/>
+  <path d="M323 194L343 181V306L323 332V194Z" fill="url(#lettersBright)" opacity="0.55"/>
+  <path d="M367 223L387 210V314L367 339V223Z" fill="url(#lettersBright)" opacity="0.55"/>
+
+  <path d="M125 147L256 72L387 147" stroke="#FFFFFF" stroke-opacity="0.8" stroke-width="8"/>
+  <path d="M125 293L256 368L387 293" stroke="#34343A" stroke-width="8"/>
+</svg>
