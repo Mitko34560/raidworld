@@ -1,35 +1,41 @@
 const revealItems = document.querySelectorAll(".reveal");
 const buyButtons = document.querySelectorAll(".buy-button");
 const copyButtons = document.querySelectorAll(".copy-button");
-const interactiveCards = document.querySelectorAll(".product-card, .feature-card, .step-card, .faq-card, .hero-card");
+const interactiveCards = document.querySelectorAll(
+  ".interactive-card, .hero-card, .product-card, .feature-card, .step-card, .faq-card, .overview-card, .benefit-card, .support-card, .package-panel"
+);
 const toast = document.getElementById("toast");
 
-const revealObserver = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("visible");
-        revealObserver.unobserve(entry.target);
-      }
-    });
-  },
-  {
-    threshold: 0.2
-  }
-);
+if ("IntersectionObserver" in window) {
+  const revealObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    },
+    {
+      threshold: 0.18
+    }
+  );
 
-revealItems.forEach((item) => {
-  if (!item.classList.contains("visible")) {
-    revealObserver.observe(item);
-  }
-});
+  revealItems.forEach((item) => {
+    if (!item.classList.contains("visible")) {
+      revealObserver.observe(item);
+    }
+  });
+} else {
+  revealItems.forEach((item) => item.classList.add("visible"));
+}
 
 let toastTimer;
 
 buyButtons.forEach((button) => {
   button.addEventListener("click", () => {
     const itemName = button.dataset.item || "выбранный пакет";
-    showToast(`Вы выбрали: ${itemName}. Осталось только подключить реальную checkout-ссылку.`);
+    showToast(`Вы выбрали: ${itemName}. Для оплаты свяжитесь с администрацией сервера.`);
   });
 });
 
@@ -38,7 +44,7 @@ copyButtons.forEach((button) => {
     const value = button.dataset.copyValue;
 
     if (!value) {
-      showToast("Адрес для копирования не задан.");
+      showToast("IP адрес не указан.");
       return;
     }
 
@@ -52,6 +58,10 @@ copyButtons.forEach((button) => {
 });
 
 function showToast(message) {
+  if (!toast) {
+    return;
+  }
+
   clearTimeout(toastTimer);
   toast.textContent = message;
   toast.classList.add("is-visible");

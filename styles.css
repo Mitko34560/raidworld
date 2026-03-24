@@ -1,16 +1,16 @@
 :root {
   --bg: #020202;
-  --bg-soft: #080808;
-  --panel: rgba(10, 10, 10, 0.84);
-  --panel-strong: rgba(14, 14, 14, 0.94);
+  --bg-soft: #090909;
+  --panel: rgba(11, 11, 11, 0.88);
+  --panel-strong: rgba(16, 16, 16, 0.95);
   --line: rgba(255, 255, 255, 0.08);
-  --line-strong: rgba(255, 86, 86, 0.22);
+  --line-strong: rgba(255, 102, 102, 0.24);
   --text: #f7f2f2;
-  --muted: #bda8a8;
-  --primary: #d51616;
-  --primary-strong: #ff3d3d;
-  --primary-soft: rgba(255, 61, 61, 0.16);
-  --shadow: 0 28px 80px rgba(0, 0, 0, 0.5);
+  --muted: #beaaaa;
+  --primary: #d51515;
+  --primary-strong: #ff4a34;
+  --primary-soft: rgba(255, 74, 52, 0.14);
+  --shadow: 0 30px 90px rgba(0, 0, 0, 0.55);
   --radius-xl: 34px;
   --radius-lg: 24px;
   --radius-md: 18px;
@@ -32,8 +32,8 @@ body {
   color: var(--text);
   font-family: "Trebuchet MS", "Segoe UI", sans-serif;
   background:
-    radial-gradient(circle at top, rgba(255, 43, 43, 0.16), transparent 24%),
-    radial-gradient(circle at 82% 14%, rgba(255, 43, 43, 0.1), transparent 18%),
+    radial-gradient(circle at top, rgba(255, 74, 52, 0.16), transparent 24%),
+    radial-gradient(circle at 84% 12%, rgba(255, 74, 52, 0.1), transparent 18%),
     linear-gradient(180deg, #010101 0%, #050505 45%, #090909 100%);
 }
 
@@ -46,7 +46,7 @@ body::before {
     linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
   background-size: 46px 46px;
-  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.92), transparent);
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.94), transparent);
 }
 
 button,
@@ -56,20 +56,25 @@ select {
   font: inherit;
 }
 
-.site-shell {
+.site-shell,
+.inner-shell {
   position: relative;
   max-width: var(--container);
   margin: 0 auto;
   padding: 28px 28px 56px;
 }
 
+.inner-shell {
+  min-height: 100vh;
+}
+
 .grid-fade {
   position: absolute;
   inset: 0;
-  background:
-    radial-gradient(circle at 50% 0%, rgba(255, 61, 61, 0.1), transparent 22%),
-    radial-gradient(circle at 20% 20%, rgba(255, 61, 61, 0.06), transparent 18%);
   pointer-events: none;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(255, 74, 52, 0.1), transparent 22%),
+    radial-gradient(circle at 20% 20%, rgba(255, 74, 52, 0.06), transparent 18%);
 }
 
 .ambient {
@@ -87,20 +92,23 @@ select {
 .ambient-left {
   top: 120px;
   left: -130px;
-  background: rgba(255, 10, 10, 0.26);
+  background: rgba(255, 12, 12, 0.26);
 }
 
 .ambient-right {
   top: 360px;
   right: -140px;
-  background: rgba(255, 78, 78, 0.16);
+  background: rgba(255, 102, 102, 0.16);
   animation-delay: -4s;
 }
 
 .topbar,
 .hero,
 .section,
-.footer {
+.footer,
+.subpage-hero,
+.info-strip,
+.package-layout {
   position: relative;
   z-index: 1;
 }
@@ -114,12 +122,13 @@ select {
   margin-bottom: 36px;
   border: 1px solid rgba(255, 255, 255, 0.07);
   border-radius: 999px;
-  background: rgba(8, 8, 8, 0.78);
+  background: rgba(8, 8, 8, 0.8);
   box-shadow: var(--shadow);
   backdrop-filter: blur(14px);
 }
 
-.brand {
+.brand,
+.footer-brand {
   display: inline-flex;
   align-items: center;
   gap: 14px;
@@ -127,7 +136,26 @@ select {
   text-decoration: none;
 }
 
-.brand-mark,
+.brand-logo,
+.footer-logo {
+  display: block;
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 24px rgba(255, 74, 52, 0.24));
+}
+
+.footer-logo {
+  width: 42px;
+  height: 42px;
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
 .brand-text strong,
 .nav a,
 .nav-cta,
@@ -136,30 +164,10 @@ select {
 .card-label,
 .tier,
 .feature-index,
-.terminal-top {
+.terminal-top,
+.package-price,
+.breadcrumb {
   font-family: "Bahnschrift", "Arial Narrow", sans-serif;
-}
-
-.brand-mark {
-  display: grid;
-  place-items: center;
-  width: 50px;
-  height: 50px;
-  border-radius: 16px;
-  background:
-    linear-gradient(160deg, rgba(255, 70, 70, 0.96), rgba(121, 3, 3, 0.96));
-  box-shadow:
-    0 12px 28px rgba(213, 22, 22, 0.32),
-    inset 0 1px 0 rgba(255, 255, 255, 0.18);
-  letter-spacing: 0.1em;
-  font-size: 1.1rem;
-  font-weight: 700;
-}
-
-.brand-text {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
 }
 
 .brand-text small,
@@ -173,7 +181,12 @@ select {
 .footer span,
 .stat-card span,
 .hero-ip span,
-.price-row small {
+.price-row small,
+.package-meta span,
+.overview-card p,
+.benefit-card p,
+.support-card p,
+.subpage-lead {
   color: var(--muted);
 }
 
@@ -185,8 +198,8 @@ select {
 
 .nav a,
 .nav-cta {
-  text-decoration: none;
   color: var(--text);
+  text-decoration: none;
 }
 
 .nav a {
@@ -201,40 +214,51 @@ select {
 .nav-cta {
   padding: 14px 22px;
   border-radius: 999px;
-  background: linear-gradient(145deg, rgba(255, 72, 72, 0.95), rgba(140, 10, 10, 0.95));
+  background: linear-gradient(145deg, rgba(255, 84, 84, 0.95), rgba(140, 10, 10, 0.95));
   box-shadow: 0 12px 28px rgba(213, 22, 22, 0.28);
 }
 
-.hero {
+.hero,
+.subpage-hero {
   display: grid;
-  grid-template-columns: minmax(0, 1.12fr) minmax(420px, 0.88fr);
   gap: 40px;
   align-items: stretch;
   padding: 52px;
-  min-height: 820px;
   border: 1px solid rgba(255, 255, 255, 0.06);
   border-radius: calc(var(--radius-xl) + 6px);
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.04), transparent 22%),
-    radial-gradient(circle at 70% 30%, rgba(255, 61, 61, 0.12), transparent 28%),
+    radial-gradient(circle at 70% 30%, rgba(255, 74, 52, 0.12), transparent 28%),
     linear-gradient(135deg, rgba(18, 18, 18, 0.98), rgba(5, 5, 5, 0.96));
   box-shadow: var(--shadow);
   overflow: hidden;
 }
 
-.hero::before {
+.hero {
+  grid-template-columns: minmax(0, 1.12fr) minmax(420px, 0.88fr);
+  min-height: 820px;
+}
+
+.subpage-hero {
+  grid-template-columns: minmax(0, 1fr) minmax(340px, 0.9fr);
+  min-height: 620px;
+}
+
+.hero::before,
+.subpage-hero::before {
   content: "";
   position: absolute;
   inset: auto 8% 10% auto;
   width: 360px;
   height: 360px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(255, 61, 61, 0.22), transparent 68%);
+  background: radial-gradient(circle, rgba(255, 74, 52, 0.22), transparent 68%);
   filter: blur(10px);
   animation: pulse 8s ease-in-out infinite;
 }
 
-.hero::after {
+.hero::after,
+.subpage-hero::after {
   content: "";
   position: absolute;
   right: -4%;
@@ -249,24 +273,30 @@ select {
 
 .eyebrow {
   margin: 0 0 14px;
-  color: #ff8c8c;
+  color: #ff9185;
   font-size: 0.8rem;
   letter-spacing: 0.22em;
   text-transform: uppercase;
 }
 
 .hero h1,
+.subpage-hero h1,
 .section-heading h2,
 .product-card h3,
 .feature-card h3,
 .step-card h3,
 .faq-card h3,
 .hero-card strong,
-.hero-ip strong {
+.hero-ip strong,
+.package-panel h2,
+.overview-card h3,
+.benefit-card h3,
+.support-card h3 {
   font-family: "Bahnschrift", "Arial Narrow", sans-serif;
 }
 
-.hero h1 {
+.hero h1,
+.subpage-hero h1 {
   margin: 0;
   max-width: 11ch;
   font-size: clamp(3.3rem, 7vw, 6.8rem);
@@ -274,12 +304,20 @@ select {
   letter-spacing: 0.01em;
 }
 
-.hero h1 span {
-  color: var(--primary-strong);
-  text-shadow: 0 0 24px rgba(255, 61, 61, 0.26);
+.subpage-hero h1 {
+  max-width: 13ch;
+  font-size: clamp(3rem, 6vw, 5.4rem);
 }
 
-.hero-text {
+.hero h1 span,
+.subpage-hero h1 span,
+.package-price {
+  color: var(--primary-strong);
+  text-shadow: 0 0 24px rgba(255, 74, 52, 0.26);
+}
+
+.hero-text,
+.subpage-lead {
   max-width: 64ch;
   margin: 24px 0 36px;
   font-size: 1.08rem;
@@ -289,7 +327,10 @@ select {
 .hero-actions,
 .hero-pills,
 .hero-stats,
-.price-row {
+.price-row,
+.product-actions,
+.subpage-actions,
+.package-meta {
   display: flex;
   align-items: center;
   gap: 16px;
@@ -305,6 +346,7 @@ select {
   border-radius: 14px;
   border: 1px solid transparent;
   cursor: pointer;
+  color: inherit;
   font-size: 0.97rem;
   text-decoration: none;
   transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease, background 180ms ease;
@@ -328,7 +370,7 @@ select {
 
 .button-secondary:hover {
   border-color: rgba(255, 84, 84, 0.4);
-  box-shadow: 0 12px 26px rgba(255, 61, 61, 0.1);
+  box-shadow: 0 12px 26px rgba(255, 74, 52, 0.1);
 }
 
 .hero-pills {
@@ -356,11 +398,26 @@ select {
   margin-top: 36px;
 }
 
+.stat-card,
+.overview-card,
+.benefit-card,
+.support-card,
+.package-panel {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.015)),
+    rgba(12, 12, 12, 0.95);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.26);
+}
+
 .stat-card {
   min-width: 190px;
   padding: 22px 24px;
   border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.06);
   background: rgba(255, 255, 255, 0.03);
 }
 
@@ -381,7 +438,7 @@ select {
   position: absolute;
   inset: 14% 14%;
   border-radius: 42px;
-  background: radial-gradient(circle, rgba(255, 61, 61, 0.24), transparent 66%);
+  background: radial-gradient(circle, rgba(255, 74, 52, 0.24), transparent 66%);
   filter: blur(16px);
   animation: pulse 6s ease-in-out infinite;
 }
@@ -390,7 +447,11 @@ select {
 .product-card,
 .feature-card,
 .step-card,
-.faq-card {
+.faq-card,
+.overview-card,
+.benefit-card,
+.support-card,
+.package-panel {
   position: relative;
   isolation: isolate;
   overflow: hidden;
@@ -403,7 +464,11 @@ select {
 .product-card::before,
 .feature-card::before,
 .step-card::before,
-.faq-card::before {
+.faq-card::before,
+.overview-card::before,
+.benefit-card::before,
+.support-card::before,
+.package-panel::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -417,14 +482,29 @@ select {
 .product-card:hover::before,
 .feature-card:hover::before,
 .step-card:hover::before,
-.faq-card:hover::before {
+.faq-card:hover::before,
+.overview-card:hover::before,
+.benefit-card:hover::before,
+.support-card:hover::before,
+.package-panel:hover::before {
   transform: translateX(100%);
 }
 
-.hero-card-main {
+.interactive-card {
+  transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+}
+
+.interactive-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(255, 88, 88, 0.28);
+  box-shadow: 0 20px 44px rgba(0, 0, 0, 0.28), 0 0 0 1px rgba(255, 74, 52, 0.07) inset;
+}
+
+.hero-card-main,
+.package-panel {
   padding: 34px;
   background:
-    radial-gradient(circle at top right, rgba(255, 61, 61, 0.14), transparent 32%),
+    radial-gradient(circle at top right, rgba(255, 74, 52, 0.14), transparent 32%),
     linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02)),
     rgba(12, 12, 12, 0.95);
 }
@@ -471,14 +551,15 @@ select {
   display: inline-flex;
   padding: 8px 12px;
   border-radius: 999px;
-  background: rgba(255, 61, 61, 0.14);
-  color: #ffb4b4;
+  background: rgba(255, 74, 52, 0.14);
+  color: #ffb8ad;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   font-size: 0.72rem;
 }
 
-.hero-ip {
+.hero-ip,
+.package-highlight {
   display: grid;
   gap: 4px;
   margin-bottom: 22px;
@@ -494,14 +575,16 @@ select {
 }
 
 .hero-list,
-.feature-list {
+.feature-list,
+.package-list {
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
 .hero-list li,
-.feature-list li {
+.feature-list li,
+.package-list li {
   position: relative;
   margin-top: 14px;
   padding-left: 22px;
@@ -509,7 +592,8 @@ select {
 }
 
 .hero-list li::before,
-.feature-list li::before {
+.feature-list li::before,
+.package-list li::before {
   content: "";
   position: absolute;
   left: 0;
@@ -518,7 +602,7 @@ select {
   height: 8px;
   border-radius: 50%;
   background: var(--primary-strong);
-  box-shadow: 0 0 14px rgba(255, 61, 61, 0.85);
+  box-shadow: 0 0 14px rgba(255, 74, 52, 0.85);
 }
 
 .price-row {
@@ -554,7 +638,8 @@ select {
   font-family: "Bahnschrift", "Arial Narrow", sans-serif;
 }
 
-.section {
+.section,
+.info-strip {
   margin-top: 34px;
   padding: 40px;
   border-radius: var(--radius-xl);
@@ -584,7 +669,9 @@ select {
 .feature-grid,
 .card-grid,
 .steps-grid,
-.faq-grid {
+.faq-grid,
+.overview-grid,
+.benefits-grid {
   display: grid;
   gap: 24px;
 }
@@ -596,35 +683,45 @@ select {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
-.feature-card,
-.product-card,
-.step-card,
-.faq-card {
-  padding: 30px;
-  transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+.overview-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.benefits-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .feature-card,
-.faq-card {
+.product-card,
+.step-card,
+.faq-card,
+.overview-card,
+.benefit-card,
+.support-card {
+  padding: 30px;
+}
+
+.feature-card,
+.faq-card,
+.overview-card,
+.benefit-card,
+.support-card {
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.015)),
     rgba(12, 12, 12, 0.94);
 }
 
-.feature-card:hover,
-.product-card:hover,
-.step-card:hover,
-.faq-card:hover {
-  transform: translateY(-6px);
-  border-color: rgba(255, 88, 88, 0.28);
-  box-shadow: 0 20px 44px rgba(0, 0, 0, 0.28), 0 0 0 1px rgba(255, 61, 61, 0.07) inset;
+.feature-card-accent,
+.featured-card,
+.package-panel-accent {
+  background:
+    linear-gradient(180deg, rgba(255, 74, 52, 0.17), rgba(255, 255, 255, 0.02)),
+    rgba(16, 10, 10, 0.98);
+  border-color: var(--line-strong);
 }
 
-.feature-card-accent {
-  background:
-    linear-gradient(180deg, rgba(255, 61, 61, 0.15), rgba(255, 255, 255, 0.015)),
-    rgba(16, 10, 10, 0.96);
-  border-color: var(--line-strong);
+.featured-card {
+  transform: translateY(-8px);
 }
 
 .feature-index {
@@ -636,15 +733,18 @@ select {
   margin-bottom: 22px;
   padding: 9px 14px;
   border-radius: 999px;
-  background: rgba(255, 61, 61, 0.12);
-  color: #ffb0b0;
+  background: rgba(255, 74, 52, 0.12);
+  color: #ffb6ae;
   letter-spacing: 0.08em;
 }
 
 .feature-card h3,
 .product-card h3,
 .step-card h3,
-.faq-card h3 {
+.faq-card h3,
+.overview-card h3,
+.benefit-card h3,
+.support-card h3 {
   margin: 0 0 14px;
   font-size: 1.8rem;
 }
@@ -653,14 +753,6 @@ select {
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.015)),
     rgba(12, 12, 12, 0.95);
-}
-
-.featured-card {
-  background:
-    linear-gradient(180deg, rgba(255, 61, 61, 0.17), rgba(255, 255, 255, 0.02)),
-    rgba(16, 10, 10, 0.98);
-  transform: translateY(-8px);
-  border-color: var(--line-strong);
 }
 
 .product-top {
@@ -672,6 +764,10 @@ select {
 
 .product-top strong {
   font-size: 1.9rem;
+}
+
+.product-actions {
+  margin-top: 30px;
 }
 
 .tier {
@@ -691,12 +787,12 @@ select {
 }
 
 .tier-elite {
-  background: rgba(255, 61, 61, 0.16);
-  color: #ffc8c8;
+  background: rgba(255, 74, 52, 0.16);
+  color: #ffd0cb;
 }
 
 .tier-legend {
-  background: linear-gradient(145deg, rgba(255, 77, 77, 0.26), rgba(117, 0, 0, 0.34));
+  background: linear-gradient(145deg, rgba(255, 94, 76, 0.28), rgba(117, 0, 0, 0.38));
 }
 
 .step-card {
@@ -711,7 +807,7 @@ select {
   height: 54px;
   margin-bottom: 22px;
   border-radius: 16px;
-  background: linear-gradient(145deg, rgba(255, 61, 61, 0.96), rgba(118, 5, 5, 0.96));
+  background: linear-gradient(145deg, rgba(255, 74, 52, 0.96), rgba(118, 5, 5, 0.96));
   box-shadow: 0 14px 24px rgba(213, 22, 22, 0.3);
   font-family: "Bahnschrift", "Arial Narrow", sans-serif;
   font-size: 1.08rem;
@@ -719,6 +815,53 @@ select {
 
 .faq-section {
   padding-bottom: 28px;
+}
+
+.breadcrumb {
+  display: inline-flex;
+  margin-bottom: 18px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  color: #ffe4de;
+  text-decoration: none;
+  letter-spacing: 0.06em;
+}
+
+.package-meta {
+  margin-top: 22px;
+}
+
+.package-meta span {
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.package-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(320px, 0.8fr);
+  gap: 24px;
+  margin-top: 34px;
+}
+
+.package-price {
+  margin: 8px 0 0;
+  font-size: clamp(2.8rem, 5vw, 4.8rem);
+  line-height: 0.92;
+}
+
+.package-highlight strong {
+  font-size: 1.2rem;
+}
+
+.info-strip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
 }
 
 .footer {
@@ -747,11 +890,11 @@ select {
   min-width: min(92vw, 380px);
   padding: 16px 18px;
   border-radius: 16px;
-  border: 1px solid rgba(255, 61, 61, 0.34);
+  border: 1px solid rgba(255, 74, 52, 0.34);
   background: rgba(10, 10, 10, 0.96);
   color: #fff2f2;
   text-align: center;
-  box-shadow: 0 20px 42px rgba(0, 0, 0, 0.36), 0 0 24px rgba(255, 61, 61, 0.14);
+  box-shadow: 0 20px 42px rgba(0, 0, 0, 0.36), 0 0 24px rgba(255, 74, 52, 0.14);
   opacity: 0;
   pointer-events: none;
   transition: opacity 200ms ease, transform 200ms ease;
@@ -806,7 +949,7 @@ select {
   }
 }
 
-@media (max-width: 1100px) {
+@media (max-width: 1180px) {
   .topbar {
     flex-wrap: wrap;
     border-radius: 30px;
@@ -820,19 +963,25 @@ select {
   }
 
   .hero,
+  .subpage-hero,
   .feature-grid,
   .card-grid,
   .steps-grid,
-  .faq-grid {
+  .faq-grid,
+  .overview-grid,
+  .benefits-grid,
+  .package-layout {
     grid-template-columns: 1fr;
   }
 
-  .hero {
+  .hero,
+  .subpage-hero {
     min-height: auto;
-    padding: 32px;
+    padding: 34px;
   }
 
-  .hero h1 {
+  .hero h1,
+  .subpage-hero h1 {
     max-width: none;
   }
 
@@ -842,19 +991,26 @@ select {
 }
 
 @media (max-width: 720px) {
-  .site-shell {
+  .site-shell,
+  .inner-shell {
     padding: 16px 14px 34px;
   }
 
   .topbar {
     justify-content: center;
-    text-align: center;
     padding: 16px;
+    text-align: center;
   }
 
-  .brand {
+  .brand,
+  .footer-brand {
     width: 100%;
     justify-content: center;
+  }
+
+  .brand-logo {
+    width: 54px;
+    height: 54px;
   }
 
   .nav {
@@ -868,7 +1024,9 @@ select {
   }
 
   .hero,
-  .section {
+  .subpage-hero,
+  .section,
+  .info-strip {
     padding: 22px;
   }
 
@@ -876,13 +1034,19 @@ select {
   .hero-pills,
   .hero-stats,
   .price-row,
-  .footer {
+  .product-actions,
+  .subpage-actions,
+  .package-meta,
+  .footer,
+  .info-strip {
     flex-direction: column;
     align-items: stretch;
   }
 
   .button,
-  .price-row .button {
+  .price-row .button,
+  .product-actions .button,
+  .subpage-actions .button {
     width: 100%;
   }
 

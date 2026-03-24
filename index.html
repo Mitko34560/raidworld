@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="bg">
+<html lang="ru">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Raid World | Хардкорный Minecraft сервер</title>
+  <title>Raid World | PvP Minecraft сервер</title>
   <meta
     name="description"
-    content="Raid World — хардкорный Minecraft сервер с черно-красной эстетикой, агрессивным PvP вайбом и быстрым стартом для новых игроков."
+    content="Raid World — PvP Minecraft сервер с черно-красной атмосферой, быстрым стартом и отдельными страницами привилегий."
   >
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -17,67 +17,50 @@
     <div class="grid-fade"></div>
 
     <header class="topbar">
-      <a class="brand" href="#hero">
-        <span class="brand-mark">RW</span>
+      <a class="brand" href="#hero" aria-label="Raid World">
+        <img class="brand-logo" src="assets/rw-logo.svg" alt="Raid World logo">
         <span class="brand-text">
           <strong>Raid World</strong>
-          <small>Хардкорный Minecraft проект</small>
+          <small>Официальный PvP Minecraft проект</small>
         </span>
       </a>
 
       <nav class="nav">
         <a href="#about">О сервере</a>
         <a href="#store">Привилегии</a>
-        <a href="#start">Начать</a>
-        <a href="#faq">FAQ</a>
+        <a href="#start">Как начать</a>
+        <a href="#faq">Информация</a>
       </nav>
 
-      <a class="nav-cta" href="#store">Войти в игру</a>
+      <a class="nav-cta" href="#store">Выбрать привилегию</a>
     </header>
 
     <main>
       <section class="hero reveal visible" id="hero">
         <div class="hero-copy">
-          <p class="eyebrow">Season 2026 • Black / Red Edition</p>
-          <h1>Почти как <span>ReallyWorld</span>, только темнее и жёстче.</h1>
+          <p class="eyebrow">Season 2026 • Black / Red PvP</p>
+          <h1><span>Raid World</span> Начало новой эры</h1>
           <p class="hero-text">
-            Raid World — это PvP сервер с тяжёлой атмосферой, быстрым прогрессом и визуальным стилем,
-            который бьёт с первого экрана: чёрный, красный и ничего лишнего.
+            Открой для себя огромные миры, полные веселья и миллионов друзей
           </p>
 
           <div class="hero-actions">
-            <a class="button button-primary" href="#start">Начать играть</a>
+            <a class="button button-primary" href="#start">Присоединяйтесь к нам прямо сейчас и начинайте игру !</a>
             <button class="button button-secondary copy-button" data-copy-value="mc.raidworld.me">
               Скопировать IP
             </button>
           </div>
 
           <div class="hero-pills">
-            <span class="chip">1.16.5 - 1.21.x</span>
-            <span class="chip">24/7 Online</span>
-            <span class="chip">Hardcore PvP</span>
+            <span class="chip">Версия 1.21.x</span>
+            <span class="chip">Кланы и рейды</span>
+            <span class="chip">Онлайн 24/7</span>
           </div>
-
-          <div class="hero-stats">
-            <article class="stat-card">
-              <strong>04</strong>
-              <span>боевых режима и ивенты</span>
-            </article>
-            <article class="stat-card">
-              <strong>x2</strong>
-              <span>стартовые бонусы при активации</span>
-            </article>
-            <article class="stat-card">
-              <strong>100%</strong>
-              <span>чёрно-красная визуальная подача</span>
-            </article>
-          </div>
-        </div>
 
         <div class="hero-panel">
           <div class="panel-glow"></div>
 
-          <article class="hero-card hero-card-main">
+          <article class="hero-card hero-card-main interactive-card">
             <div class="terminal-top">
               <span></span>
               <span></span>
@@ -86,75 +69,54 @@
 
             <div class="hero-card-heading">
               <span class="card-label">Server Status</span>
-              <strong>ONLINE</strong>
+              <strong>OFFLINE</strong>
             </div>
 
             <div class="hero-ip">
-              <span>IP</span>
+              <span>IP адрес</span>
               <strong>mc.raidworld.me</strong>
             </div>
 
             <ul class="hero-list">
-              <li>Большой hero-блок с тяжёлым contrast-first дизайном</li>
-              <li>Red neon акценты вместо светлых пастельных тонов</li>
-              <li>Быстрый фокус на PvP, донате и старте для новых игроков</li>
+              <li>костомный дизайн</li>
+              <li>Гриферский сервер</li>
             </ul>
 
             <div class="price-row">
               <div>
-                <small>Самый сильный пакет</small>
-                <strong>Legend+</strong>
+                <span>Старт сезона</span>
+                <strong>Скоро</strong>
               </div>
-              <button class="button button-primary buy-button" data-item="пакет Legend+">
-                Активировать
-              </button>
-            </div>
           </article>
-
-          <div class="hero-floating">
-            <article class="float-card">
-              <small>Wipe mood</small>
-              <strong>Dark Spring</strong>
-            </article>
-            <article class="float-card">
-              <small>Format</small>
-              <strong>Clan / Raid / PvP</strong>
-            </article>
-            <article class="float-card">
-              <small>Start</small>
-              <strong>Fast join</strong>
-            </article>
-          </div>
         </div>
-      </section>
 
       <section class="section reveal" id="about">
         <div class="section-heading">
           <p class="eyebrow">О сервере</p>
-          <h2>Структура близка к референсу, но пропущена через более мрачный стиль Raid World.</h2>
+          <h2>Главная страница рассказывает только о том, что действительно важно игроку.</h2>
           <p>
-            Я взял основные элементы такого Minecraft landing page: тяжёлый hero, статусную карту,
-            контрастные CTA-кнопки, статистику и блоки с чёткими акцентами.
+            Raid World рассчитан на быстрый вход в игру, жёсткий PvP ритм и понятный выбор привилегий.
+            Никаких лишних витрин: только сервер, пакеты и информация для старта.
           </p>
         </div>
 
         <div class="feature-grid">
-          <article class="feature-card">
+          <article class="feature-card interactive-card">
             <span class="feature-index">01</span>
-            <h3>Massive Hero</h3>
-            <p>Первый экран сразу работает на атмосферу, CTA и копирование IP без лишнего шума.</p>
+            <h3>Быстрый старт</h3>
+            <p>Скопируй IP, зайди на сервер и сразу подключайся к игре без лишних действий.</p>
           </article>
 
-          <article class="feature-card feature-card-accent">
+          <article class="feature-card feature-card-accent interactive-card">
             <span class="feature-index">02</span>
-            <h3>Black / Red UI</h3>
-            <p>Почти вся светлая палитра убрана и заменена чёрными панелями, красным glow и сеточным фоном.</p>
+            <h3>Честный донат</h3>
+            <p>Привилегии отделены от остального контента и оформлены так, чтобы сразу было видно разницу.</p>
           </article>
 
-          <article class="feature-card">
+          <article class="feature-card interactive-card">
             <span class="feature-index">03</span>
-            <h3>Server Energy</h3>
-            <p>Секции теперь ощущаются как homepage Minecraft проекта, а не как обычный донат-магазин.</p>
+            <h3>Один стиль</h3>
+            <p>Логотип, страницы пакетов и главная работают в одной чёрно-красной системе без случайных блоков.</p>
           </article>
         </div>
       </section>
@@ -162,121 +124,128 @@
       <section class="section reveal" id="store">
         <div class="section-heading">
           <p class="eyebrow">Привилегии</p>
-          <h2>Пакеты выглядят мощнее и естественно сидят в новой визуальной подаче.</h2>
+          <h2>Три пакета с разным уровнем статуса, команд и косметики.</h2>
           <p>
-            Карточки собраны как premium store-блоки с более сильным контрастом, резче hover-эффектом и понятной иерархией.
+            Каждая привилегия вынесена в отдельную страницу, чтобы игрок мог спокойно посмотреть состав,
+            преимущества и цену в евро перед покупкой.
           </p>
         </div>
 
         <div class="card-grid">
-          <article class="product-card">
+          <article class="product-card interactive-card">
             <div class="product-top">
               <span class="tier tier-vip">VIP</span>
-              <strong>19.99 лв.</strong>
+              <strong>€9.99</strong>
             </div>
-            <h3>Shadow</h3>
-            <p>Стартовый пакет для игроков, которым нужен стильный старт, префикс и несколько удобных бонусов.</p>
+            <h3>Shadow VIP</h3>
+            <p>Лёгкий вход в премиум-уровень: красивый префикс, быстрый старт и полезные ежедневные бонусы.</p>
             <ul class="feature-list">
-              <li>чат-префикс и цветной ник</li>
-              <li>ежедневная награда</li>
-              <li>более быстрый старт в новом сезоне</li>
+              <li>уникальный префикс Shadow и цветной ник</li>
+              <li>ежедневный набор и 2 точки дома</li>
+              <li>приоритет в очереди и бонус к старту сезона</li>
             </ul>
-            <button class="button button-secondary buy-button" data-item="Shadow VIP">
-              Купить VIP
-            </button>
+            <div class="product-actions">
+              <a class="button button-secondary" href="shadow.html">Подробнее</a>
+              <a class="button button-primary" href="shadow.html">Купить</a>
+            </div>
           </article>
 
-          <article class="product-card featured-card">
+          <article class="product-card featured-card interactive-card">
             <div class="product-top">
               <span class="tier tier-elite">ELITE</span>
-              <strong>39.99 лв.</strong>
+              <strong>€19.99</strong>
             </div>
-            <h3>Crimson</h3>
-            <p>Лучший баланс между престижем, визуальным присутствием и реальным удобством в игре.</p>
+            <h3>Crimson Elite</h3>
+            <p>Пакет для активных игроков, которым нужны удобные команды, эффектный статус и уверенное преимущество.</p>
             <ul class="feature-list">
-              <li>всё из VIP</li>
-              <li>дополнительные наборы и бонусы</li>
-              <li>больше команд и удобств</li>
+              <li>всё из Shadow VIP</li>
+              <li>дополнительный кит, ремонт предметов и аукцион</li>
+              <li>клановые бонусы и эксклюзивные частицы</li>
             </ul>
-            <button class="button button-primary buy-button" data-item="Crimson Elite">
-              Купить Elite
-            </button>
+            <div class="product-actions">
+              <a class="button button-secondary" href="crimson.html">Подробнее</a>
+              <a class="button button-primary" href="crimson.html">Купить</a>
+            </div>
           </article>
 
-          <article class="product-card">
+          <article class="product-card interactive-card">
             <div class="product-top">
-              <span class="tier tier-legend">LEGEND</span>
-              <strong>69.99 лв.</strong>
+              <span class="tier tier-legend">LEGEND+</span>
+              <strong>€34.99</strong>
             </div>
-            <h3>Legend+</h3>
-            <p>Полный пакет для игроков, которым нужен максимальный статус, эффекты и приоритетный доступ.</p>
+            <h3>Inferno Legend+</h3>
+            <p>Максимальный пакет с визуальным статусом, премиальными командами и сезонными наградами для топ-игроков.</p>
             <ul class="feature-list">
-              <li>всё из Elite</li>
-              <li>эксклюзивные visual-эффекты</li>
-              <li>приоритетная поддержка</li>
+              <li>всё из Crimson Elite</li>
+              <li>анимированный префикс и расширенный набор команд</li>
+              <li>еженедельные ключи, косметика и приоритетная помощь</li>
             </ul>
-            <button class="button button-secondary buy-button" data-item="Legend+">
-              Купить Legend+
-            </button>
+            <div class="product-actions">
+              <a class="button button-secondary" href="legend.html">Подробнее</a>
+              <a class="button button-primary" href="legend.html">Купить</a>
+            </div>
           </article>
         </div>
       </section>
 
       <section class="section reveal" id="start">
         <div class="section-heading">
-          <p class="eyebrow">Начать</p>
-          <h2>Вход на сервер сделан коротким, понятным и вынесен в отдельный блок как надо.</h2>
+          <p class="eyebrow">Как начать</p>
+          <h2>Три простых шага, чтобы войти на Raid World.</h2>
         </div>
 
         <div class="steps-grid">
-          <article class="step-card">
+          <article class="step-card interactive-card">
             <span>01</span>
             <h3>Скопируй IP</h3>
-            <p>Нажми кнопку в hero-секции, и IP адрес сразу скопируется в буфер обмена.</p>
+            <p>Нажми кнопку в hero-секции, и адрес сервера сразу попадёт в буфер обмена.</p>
           </article>
 
-          <article class="step-card">
+          <article class="step-card interactive-card">
             <span>02</span>
-            <h3>Зайди на сервер</h3>
-            <p>Добавь адрес в Minecraft клиент и подключись через поддерживаемую версию.</p>
+            <h3>Подключись</h3>
+            <p>Добавь IP в Minecraft клиент и зайди на сервер через поддерживаемую версию.</p>
           </article>
 
-          <article class="step-card">
+          <article class="step-card interactive-card">
             <span>03</span>
-            <h3>Активируй пакет</h3>
-            <p>Выбери привилегию, и после оплаты сюда легко подключается реальный checkout или Discord flow.</p>
+            <h3>Выбери пакет</h3>
+            <p>Если нужен статус, команды и бонусы, открой отдельную страницу привилегии и выбери подходящий уровень.</p>
           </article>
         </div>
       </section>
 
       <section class="section reveal faq-section" id="faq">
         <div class="section-heading">
-          <p class="eyebrow">FAQ</p>
-          <h2>Короткие ответы на самое важное.</h2>
+          <p class="eyebrow">Информация</p>
+          <h2>Коротко о самом важном перед входом на сервер.</h2>
         </div>
 
         <div class="faq-grid">
-          <article class="faq-card">
-            <h3>Что изменилось?</h3>
-            <p>Основная композиция теперь ближе к референсному Minecraft homepage, а не к обычному донат-магазину.</p>
+          <article class="faq-card interactive-card">
+            <h3>Какая версия нужна?</h3>
+            <p>Сервер рассчитан на версию 1.21.x. Если понадобится, этот блок легко обновляется под точную сборку.</p>
           </article>
 
-          <article class="faq-card">
-            <h3>Какое новое направление?</h3>
-            <p>Меньше серого, почти никаких светлых поверхностей и намного более заметные красные glow-акценты.</p>
+          <article class="faq-card interactive-card">
+            <h3>Что есть на сервере?</h3>
+            <p>Кланы, рейды, PvP, донат-привилегии, отдельные пакеты и чёткий визуальный стиль без лишней перегрузки.</p>
           </article>
 
-          <article class="faq-card">
-            <h3>Что ещё легко подключить?</h3>
-            <p>Реальный IP адрес, Discord-кнопку, checkout-ссылки и live online counter можно добавить сразу после этого.</p>
+          <article class="faq-card interactive-card">
+            <h3>Как купить привилегию?</h3>
+            <p>Открой страницу нужного пакета, посмотри полный состав и используй кнопку покупки или свяжись с администрацией.</p>
           </article>
         </div>
       </section>
     </main>
 
     <footer class="footer">
-      <p>Raid World</p>
-      <span>Хардкорный Minecraft landing page в чёрно-красной подаче.</span>
+      <div class="footer-brand">
+        <img class="footer-logo" src="assets/rw-logo.svg" alt="Raid World logo">
+        <p>Raid World</p>
+      </div>
+      <span>Официальная страница сервера и привилегий Raid World.</span>
     </footer>
   </div>
 
